@@ -14,7 +14,6 @@
           </div>
           <div class="col-xs-4">
             {{bs-datetimepicker  date=booking.startAt updateDate=(action (mut booking.startAt))}}
-            {{booking.startAt}}
             {{error-paragraph errors=booking.errors.startAt}}
           </div>
         </div>
@@ -25,7 +24,6 @@
           </div>
           <div class="col-xs-4">
             {{bs-datetimepicker date=booking.endAt updateDate=(action (mut booking.endAt))}}
-            {{booking.endAt}}
             {{error-paragraph errors=booking.errors.endAt}}
           </div>
         </div>

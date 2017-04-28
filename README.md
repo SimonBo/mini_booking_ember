@@ -1,7 +1,7 @@
 # mini-booking-ember
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This app can be used with the Rails Api from: https://github.com/SimonBo/mini_booking_api
+Mirage factories are included for testing and development.
 
 ## Prerequisites
 
