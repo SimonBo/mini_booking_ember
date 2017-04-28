@@ -36,9 +36,9 @@
 
         <p>Length of stay: {{booking.lengthOfStay}}</p>
         <p>Price: {{bookingPrice}}</p>
-        <p>Client email: {{input value=booking.clientEmail  key-press=(action (mut booking.clientEmail))}}</p>
+        <p>Client email: {{input value=booking.clientEmail  key-press=(action (mut booking.clientEmail)) id='client-email'}}</p>
         {{error-paragraph errors=booking.errors.clientEmail}}
-        <button onclick={{action 'bookRental'}} class="btn btn-success {{if bookingValid '' 'disabled'}}">Book it!</button>
+        <button onclick={{action 'bookRental'}} class="btn btn-success {{if bookingValid '' 'disabled'}}" id='book-rental'>Book it!</button>
 
       </div>
     </div>

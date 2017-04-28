@@ -37,6 +37,7 @@ module.exports = function(environment) {
   if (environment === 'test') {
     // Testem prefers this...
     ENV.locationType = 'none';
+    ENV.serverURL = '';
 
     // keep test console output quieter
     ENV.APP.LOG_ACTIVE_GENERATION = false;
@@ -45,8 +46,8 @@ module.exports = function(environment) {
     ENV.APP.rootElement = '#ember-testing';
   }
 
-  if (environment === 'production') {
-
+  if (environment == 'production') {
+    ENV.serverURL = '/';
   }
   ENV.apiBaseURL = ENV.serverURL + '/' + ENV.apiNamespace;
   return ENV;

@@ -1,6 +1,8 @@
 import Ember from 'ember';
+import moment from 'moment';
 
 export default Ember.Component.extend({
+  classNames: ['rental-presentation'],
   store: Ember.inject.service(),
 
   bookingPrice: Ember.computed('booking.lengthOfStay', 'rental', function() {
