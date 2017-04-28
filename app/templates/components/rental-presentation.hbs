@@ -1,3 +1,46 @@
-<p>{{rental.name}}</p>
-<p>Daily rate: {{rental.dailyRate}}</p>
-{{#link-to 'rentals'}}Back{{/link-to}}
+<div class="row">
+  <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+    <div class="thumbnail">
+      <img src="http://lorempixel.com/400/200/city" alt="city">
+      <div class="caption">
+        <h3>{{rental.name}}</h3>
+        <p>Daily rate: {{rental.dailyRate}}</p>
+        <p>{{#link-to 'rentals' class='btn btn-primary'}}Back{{/link-to}}</p>
+
+        <h1>Book it!</h1>
+        <div class="row">
+          <div class="col-xs-1">
+            <span>Start date:</span>
+          </div>
+          <div class="col-xs-4">
+            {{bs-datetimepicker  date=booking.startAt updateDate=(action (mut booking.startAt))}}
+            {{booking.startAt}}
+            {{error-paragraph errors=booking.errors.startAt}}
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs-1">
+            <span>End date:</span>
+          </div>
+          <div class="col-xs-4">
+            {{bs-datetimepicker date=booking.endAt updateDate=(action (mut booking.endAt))}}
+            {{booking.endAt}}
+            {{error-paragraph errors=booking.errors.endAt}}
+          </div>
+        </div>
+
+
+
+
+
+        <p>Length of stay: {{booking.lengthOfStay}}</p>
+        <p>Price: {{bookingPrice}}</p>
+        <p>Client email: {{input value=booking.clientEmail  key-press=(action (mut booking.clientEmail))}}</p>
+        {{error-paragraph errors=booking.errors.clientEmail}}
+        <button onclick={{action 'bookRental'}} class="btn btn-success {{if bookingValid '' 'disabled'}}">Book it!</button>
+
+      </div>
+    </div>
+  </div>
+</div>

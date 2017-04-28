@@ -14,6 +14,8 @@ export default function() {
 
   this.get('/rentals');
   this.get('/rentals/:id');
+  this.get('/bookings/:id');
+  this.post('/bookings');
   /*
     Shorthand cheatsheet:
 

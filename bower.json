@@ -1,5 +1,6 @@
 {
   "name": "mini-booking-ember",
   "dependencies": {
+    "bootstrap-datepicker": "^1.6.4"
   }
 }
