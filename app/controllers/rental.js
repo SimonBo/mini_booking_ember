@@ -8,11 +8,7 @@ export default Ember.Controller.extend({
         self.transitionToRoute('booking', booking);
       }
 
-      function handleFailure(reason) {
-        console.log(reason);
-      }
-
-      booking.save().then(handleSuccess).catch(handleFailure);
+      booking.save().then(handleSuccess);
     }
   }
 });

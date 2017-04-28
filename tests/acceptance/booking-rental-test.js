@@ -1,3 +1,4 @@
+/* global server */
 import { test } from 'qunit';
 import moduleForAcceptance from 'mini-booking-ember/tests/helpers/module-for-acceptance';
 
