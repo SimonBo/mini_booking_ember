@@ -1,7 +1,8 @@
 # mini-booking-ember
 
-This app can be used with the Rails Api from: https://github.com/SimonBo/mini_booking_api
-Mirage factories are included for testing and development.
+* This app can be used with the Rails Api from: https://github.com/SimonBo/mini_booking_api
+* Mirage factories are included for testing and development.
+* run ember server --proxy http://localhost:3000 if using the api locally
 
 ## Prerequisites
 
