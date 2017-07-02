@@ -32,6 +32,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
 
     ENV.serverURL = "http://localhost:3000";
+    ENV.apiURL = 'http://127.0.0.1:3000';
   }
 
   if (environment === 'test') {
@@ -49,6 +50,10 @@ module.exports = function(environment) {
   if (environment == 'production') {
     ENV.serverURL = '/';
   }
+
+  ENV['ember-simple-auth'] = {
+    routeAfterAuthentication: 'rentals'
+  };
   ENV.apiBaseURL = ENV.serverURL + '/' + ENV.apiNamespace;
   return ENV;
 };

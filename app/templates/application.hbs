@@ -1,5 +1,24 @@
 <div class="container-fluid">
   <div class="row">
+    <nav>
+
+      {{#if session.isAuthenticated}}
+      <span>{{sessionAccount.currentUser.username}}</span>
+
+      {{#link-to "bookings"}}
+      My Bookings
+      {{/link-to}}
+
+      <button {{action "logout"}}>Logout</button>
+      {{else}}
+      {{#link-to "login"}}
+      Login
+      {{/link-to}}
+      {{#link-to "signup"}}
+      Sign up
+      {{/link-to}}
+      {{/if}}
+    </nav>
     {{outlet}}
   </div>
 </div>

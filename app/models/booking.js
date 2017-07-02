@@ -15,6 +15,7 @@ export default DS.Model.extend({
   clientEmail: DS.attr('string'),
   price: DS.attr('number'),
   rental: DS.belongsTo('rental'),
+  user: DS.belongsTo('user'),
 
   lengthOfStay: Ember.computed('startAt', 'endAt', function() {
     let startAt = this.get('startAt');
