@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-xs-12 col-sm-8 col-sm-offset-2">
     <div class="thumbnail">
-      <img src="http://lorempixel.com/400/200/city" alt="city">
+      {{!-- <img src="http://lorempixel.com/400/200/city" alt="city"> --}}
       <div class="caption">
         <h3>Rental: {{booking.rental.name}}</h3>
         <p>Booked from: {{booking.startAt}}</p>
@@ -9,9 +9,12 @@
         <p>Price: {{booking.price}}</p>
 
         <h1>Rate rental!</h1>
-
-        {{#link-to 'rentals'}}Home{{/link-to}}
-      </div>
+        <p>Stars = {{rating}}</p>
+        {{star-rating rating
+          onClick=(action 'setBookingRating')
+        }}
+      {{#link-to 'rentals'}}Home{{/link-to}}
     </div>
   </div>
+</div>
 </div>

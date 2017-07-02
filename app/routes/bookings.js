@@ -9,9 +9,9 @@ export default Ember.Route.extend(AuthenticatedRouteMixin, {
 
     return this.get('store').query('booking', {
       filter: {
-        'user_id': currentUser.id
+        'user_id': '1'
       },
-      include: 'rental'
+      include: 'rental,rental.rental-ratings'
     });
   }
 });
