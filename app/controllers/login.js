@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
       .then(() => {
         this.get('sessionAccount').loadCurrentUser();
       }).catch((reason) => {
-        this.set('errorMessage', 'Invalid username or password');
+        this.set('errorMessage', reason);
       });
     }
   }
