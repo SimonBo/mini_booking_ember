@@ -5,8 +5,18 @@ export default Ember.Component.extend({
   store: Ember.inject.service(),
 
   actions: {
-    setBookingRating(stars) {
-      return alert(stars);
+    setRentalRating(stars) {
+      let booking = this.get('booking');
+      let currentUser = this.get('currentUser');
+      let rating = this.get('rating');
+      let rental = booking.get('rental');
+      let rentalRating = rating ? rating : this.get('store').createRecord('rentalRating', {
+        rental: rental,
+        user: currentUser
+      });
+
+      rentalRating.set('stars', stars);
+      rentalRating.save()
     }
   }
 });

@@ -9,8 +9,8 @@
         <p>Price: {{booking.price}}</p>
 
         <h1>Rate rental!</h1>
-        {{star-rating rating
-          onClick=(action (mut rating))
+        {{star-rating (if rating rating.stars 1)
+          onClick=(action 'setRentalRating')
         }}
       {{#link-to 'rentals'}}Home{{/link-to}}
     </div>
