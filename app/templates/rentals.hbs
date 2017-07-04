@@ -1,5 +1,8 @@
 <h1 class='text-center'>Available rentals</h1>
+{{paginate-collection totalPages=totalPages currentPage=number}}
+
 <button {{action 'toggleSort' 'name'}}>Sort by name</button>
 {{#each sortedRentals as |rental|}}
   {{rental-card rental=rental}}
 {{/each}}
+
