@@ -1,4 +1,5 @@
 <h1 class='text-center'>Available rentals</h1>
-{{#each model as |rental|}}
+<button {{action 'toggleSort' 'name'}}>Sort by name</button>
+{{#each sortedRentals as |rental|}}
   {{rental-card rental=rental}}
 {{/each}}
