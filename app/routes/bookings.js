@@ -3,11 +3,11 @@ import AuthenticatedRouteMixin from 'ember-simple-auth/mixins/authenticated-rout
 import RSVP from 'rsvp';
 
 export default Ember.Route.extend(AuthenticatedRouteMixin, {
-  sessionAccount: Ember.inject.service(),
+  currentUser: Ember.inject.service(),
 
   model() {
-    let currentUser = this.get('sessionAccount.currentUser');
-    let userId = currentUser ? currentUser.id : 1 //till i figure out why currenUser is null after refresh
+    let currentUser = this.get('currentUser.user');
+    let userId = currentUser.id;
 
     let bookings = this.get('store').query('booking', {
       filter: {

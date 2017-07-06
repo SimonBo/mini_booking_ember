@@ -3,7 +3,7 @@
     <nav>
 
       {{#if session.isAuthenticated}}
-      <span>{{sessionAccount.currentUser.username}}</span>
+      <span>{{currentUser.user.username}}</span>
 
       {{#link-to "bookings"}}
       My Bookings
